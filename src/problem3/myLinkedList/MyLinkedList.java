@@ -13,5 +13,16 @@ public class MyLinkedList {
         }
     last.setNext(node);
         last=node;
+
+        var current=first;
+        while(current!=null){
+            if (node.getData().getRollNo()<current.getData().getRollNo()){
+                var temp=node.getData();
+                node.setData(current.getData());
+                current.setData(temp);
+            }
+            current=current.getNext();
+        }
     }
+
 }
