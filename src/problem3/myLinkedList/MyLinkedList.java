@@ -24,5 +24,14 @@ public class MyLinkedList {
             current=current.getNext();
         }
     }
+    public void deleteFirst() {
+        if (first == null) {
+            first = last = null;
+            return;
+        }
+        var sec = first.getNext();
+        first.setNext(null);
+        first = sec;
+    }
 
 }
