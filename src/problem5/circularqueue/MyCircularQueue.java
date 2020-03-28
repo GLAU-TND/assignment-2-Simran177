@@ -61,4 +61,11 @@ public class MyCircularQueue {
     public void setCircularQueue(Student[] circularQueue) {
         this.circularQueue = circularQueue;
     }
+    private boolean isEmpty(){
+        return size==0;
+    }
+
+    private boolean isFull(){
+        return size==maxSize;
+    }
 }
