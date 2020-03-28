@@ -87,6 +87,31 @@ public class BinarySearchTree {
             post.enqueue(current.getData());
         }
 }
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+    public void traversal(){
+        TreeNode current = root;
+        TreeNode parent = null;
+        this.count = 0;
+        while (current != null) {
+            if (current.getLeft() == null) {
+                count++;
+            }
+            if (parent.getData() == current.getData()) {
+            }
+            if (parent.getData() < current.getData()) {
+                System.out.println(current.getData());
+                current = current.getLeft();
+            }
+            if (parent.getData() > current.getData()) {
+                current = current.getRight();
+            }
+        }
 
 
     }
