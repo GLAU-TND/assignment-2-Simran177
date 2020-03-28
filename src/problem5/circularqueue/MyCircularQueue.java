@@ -68,4 +68,39 @@ public class MyCircularQueue {
     private boolean isFull(){
         return size==maxSize;
     }
+    public void enqueue(Student element){
+        if(!isFull()){
+            circularQueue[last]=element;
+            last=(last+1)%maxSize;
+            size++;
+        }
+        else{
+            System.out.println("Queue is full.");
+        }
+    }
+
+    public Student dequeue(){
+        Student response=null;
+        if(!isEmpty()){
+            size--;
+            response= circularQueue[first];
+            first=(first+1)%maxSize;
+            return response;
+
+        }
+        else{
+            return response;
+        }
+    }
+
+    public void show(){
+        for (int i=0;i<size;i++){
+            System.out.println(circularQueue[(i+first)%maxSize]);
+        }
+    }
+
+    public void traverse(){
+
+    }
+
 }
