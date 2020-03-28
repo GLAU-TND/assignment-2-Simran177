@@ -10,28 +10,36 @@ import problem1.node.TreeNode;
 // to implement BinarySearchTree
 public class MyBinarySearchTree {
     private TreeNode root;
-   private int count;
-    public void insert(int val)
-    {
-        TreeNode newNode=new TreeNode(val);    // local object creation
-        if(root==null)
-            root=newNode;
-        else{
+    private int count;
+
+    public void insert(int val) {
+        TreeNode newNode = new TreeNode(val);    // local object creation
+        if (root == null)
+            root = newNode;
+        else {
             TreeNode current = root;
-            TreeNode present=null;
-            while (current!=null) {
+            TreeNode present = null;
+            while (current != null) {
                 present = current;
-                if(newNode.getData()<current.getData()) {
+                if (newNode.getData() < current.getData()) {
                     current = current.getLeft();
-                }
-                else {
+                } else {
                     current = current.getRight();
                 }
-                if (newNode.getData()<present.getData()){
+                if (newNode.getData() < present.getData()) {
                     present.setLeft(newNode);
-                }
-                else
+                } else
                     present.setRight(newNode);
             }
         }
     }
+
+    public TreeNode getRoot() {
+        return root;
+    }
+
+    public void setRoot(TreeNode root) {
+        this.root = root;
+    }
+}
+
