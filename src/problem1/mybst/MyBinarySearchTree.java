@@ -41,5 +41,15 @@ public class MyBinarySearchTree {
     public void setRoot(TreeNode root) {
         this.root = root;
     }
+    public void preOrder(TreeNode current)          //Inorder Traversal DLR(Stack Formation)
+    {
+        if(current==null)
+            return;
+        else {
+            System.out.println(current.getData());
+            preOrder(current.getLeft());
+            preOrder(current.getRight());
+        }
+    }
 }
 
