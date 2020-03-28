@@ -7,4 +7,12 @@
 package problem5.student;
 // to store student information and properties
 public class Student {
+    private String name;
+    private int backlog;
+    private int appearingCount;
+    public Student(String name,int backlog,int appearingCount){
+        this.appearingCount=appearingCount;
+        this.backlog=backlog;
+        this.name=name;
+    }
 }
