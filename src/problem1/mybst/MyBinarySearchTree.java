@@ -51,5 +51,15 @@ public class MyBinarySearchTree {
             preOrder(current.getRight());
         }
     }
+    public void inOrder(TreeNode current)
+    {
+        if(current==null)
+            return;
+        else {
+            inOrder(current.getLeft());
+            System.out.println(current.getData());
+            inOrder(current.getRight());
+        }
+    }
 }
 
