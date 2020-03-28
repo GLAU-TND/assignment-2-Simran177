@@ -15,4 +15,28 @@ public class Student {
         this.backlog=backlog;
         this.name=name;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getBacklog() {
+        return backlog;
+    }
+
+    public void setBacklog(int backlog) {
+        this.backlog = backlog;
+    }
+
+    public int getAppearingCount() {
+        return appearingCount;
+    }
+
+    public void setAppearingCount(int appearingCount) {
+        this.appearingCount = appearingCount;
+    }
 }
