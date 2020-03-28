@@ -41,9 +41,10 @@ public class MyBinarySearchTree {
     public void setRoot(TreeNode root) {
         this.root = root;
     }
+
     public void preOrder(TreeNode current)          //Inorder Traversal DLR(Stack Formation)
     {
-        if(current==null)
+        if (current == null)
             return;
         else {
             System.out.println(current.getData());
@@ -51,9 +52,9 @@ public class MyBinarySearchTree {
             preOrder(current.getRight());
         }
     }
-    public void inOrder(TreeNode current)
-    {
-        if(current==null)
+
+    public void inOrder(TreeNode current) {
+        if (current == null)
             return;
         else {
             inOrder(current.getLeft());
@@ -61,11 +62,32 @@ public class MyBinarySearchTree {
             inOrder(current.getRight());
         }
     }
-    public int getCount(){
+
+    public int getCount() {
         return count;
     }
-    public void setCount(int count){
-        this.count=count;
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public void traversal() {
+        TreeNode current = root;
+        TreeNode parent = null;
+        this.count = 0;
+        while (current != null) {
+            if (current.getLeft() == null) {
+                count++;
+            }
+            if (parent.getData() == current.getData()) {
+            }
+            if (parent.getData() < current.getData()) {
+                System.out.println(current.getData());
+                current = current.getLeft();
+            }
+            if (parent.getData() > current.getData()) {
+                current = current.getRight();
+            }
+        }
     }
 }
-
