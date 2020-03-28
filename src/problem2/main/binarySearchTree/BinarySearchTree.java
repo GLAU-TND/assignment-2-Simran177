@@ -57,5 +57,37 @@ public class BinarySearchTree {
     public void setPost(MyQueue post) {
         this.post = post;
     }
+    public void preOrder(TreeNode current)          //Inorder Traversal DLR(Stack Formation)
+    {
+        if (current == null)
+            return;
+        else {
+            pre.enqueue(current.getData());
+            preOrder(current.getLeft());
+            preOrder(current.getRight());
+        }
+    }
+
+    public void inOrder(TreeNode current) {
+        if (current == null)
+            return;
+        else {
+            inOrder(current.getLeft());
+            System.out.println(current.getData());
+            inOrder(current.getRight());
+        }
+    }
+    public void postOrder(TreeNode current)
+    {
+        if(current==null)
+            return;
+        else{
+            postOrder(current.getLeft());
+            postOrder(current.getRight());
+            post.enqueue(current.getData());
+        }
 }
+
+
+    }
 }
